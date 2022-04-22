@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+
+<body>
+    <header>
+        <ul id="blog-list">
+            <li>Blogs-1</li>
+            <li>Blogs-2</li>
+            <li>Blogs-3</li>
+            <li>Blogs-4</li>
+        </ul>
+    </header>
+    <main id="new-blog">
+        <article class="blog">
+            <h1 id="student-title">My awesome blog-1</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum expedita in perferendis. Hic, commodi
+                voluptatum maxime, beatae perferendis explicabo at, pariatur quasi consectetur aliquam debitis error
+                voluptas praesentium iste saepe.</p>
+
+        </article>
+        <article class="blog">
+            <h1>My awesome blog-2</h1>
+            <p>Quos reiciendis iste tenetur ipsa error accusamus autem, rem id sunt corrupti incidunt, dolores
+                eveniet pariatur doloremque voluptates fugit cumque. Eius, officiis adipisci dignissimos amet nulla
+                repellendus modi ut non?</p>
+
+        </article>
+        <article class="blog">
+            <h1 id="hello">My awesome blog-3</h1>
+            <p>Sequi, illum quis! Nihil saepe praesentium nisi non eaque ipsa architecto eius molestias commodi
+                incidunt! Repellendus dolor, tempore omnis magnam cum laudantium tempora quibusdam iusto, similique,
+                eligendi hic mollitia obcaecati.</p>
+
+        </article>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        const students = { name: 'sayed', age: 32, job: 'teacher' };
+        console.log(document.body);
+        const names = document.getElementsByTagName('h1');
+        console.log(names);
+        for (const h1 of names) {
+            // console.log(h1.innerText);
+        }
+        const tagnames = document.getElementsByTagName('p');
+        console.log(tagnames);
+        for (const tag of tagnames) {
+            // console.log(tag.innerText);
+        }
+        const titleElement = document.getElementById('student-title').style.color = 'yellow';
+        const change = document.getElementById("hello")
+        change.style.textAlign = 'center';
+        change.innerText = 'hi, how are you';
+        change.style.color = 'blue';
+        change.style.padding = '20px';
+        change.style.backgroundColor = 'tomato';
+
+        const teacher = document.querySelector('blog');
+        // console.log(blogs);
+        // create element
+        const li = document.createElement('li');
+        const li1 = document.createElement('li');
+        const li2 = document.createElement('li');
+        li.innerText = 'Blogs-5';
+        li1.innerText = 'Blogs-6';
+        li2.innerText = 'Blogs-7';
+        // where to add
+        const ul = document.getElementById('blog-list');
+        // append new element
+        ul.appendChild(li);
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        const article = document.createElement('article');
+        article.classList.add('blog');
+        // const h3 = document.createElement('h3');
+        // h3.innerText = 'My awesome blog-4';
+        // const p = document.createElement('p');
+        // p.innerText = 'My name is saiayadul amin akhand. I love my son very much. Please Allah help me';
+
+        // article.appendChild(h3); //under article
+        // article.appendChild(p); //under article
+        article.innerHTML = `
+        <h3>My awesome blog-4</h3>
+        <p>My name is saiayadul amin akhand. I love my son very much. Please Allah help me';</p>`
+        const mainSection = document.getElementById('new-blog');
+        mainSection.appendChild(article); //under main
+        const blogs = document.getElementsByClassName('blog');
+        for (const element of blogs) {
+            element.style.border = '2px solid blue';
+            element.style.backgroundColor = 'green';
+            element.style.color = 'white';
+            element.style.padding = '20px';
+            element.style.margin = '5px';
+            element.style.borderRadius = '10px'
+        }
+
+    </script>
+    <script src="js/dom.js"></script>
+</body>
+
+</html>
